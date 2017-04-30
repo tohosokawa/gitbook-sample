@@ -24,9 +24,9 @@ phases:
 artifacts:
 #  type: zip
   files:
-    - _book/index.html
+    - *
 #     - location
 #     - target/messageUtil-1.0.jar
 #   discard-paths: yes
-#   base-directory: location
+   base-directory: _book
   
