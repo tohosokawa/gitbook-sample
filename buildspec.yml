@@ -20,7 +20,9 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+      - ls -la
 artifacts:
+  type: zip
   files:
     - _book/
 #     - location
