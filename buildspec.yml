@@ -20,9 +20,9 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-# artifacts:
-#   files:
-#     - location
+artifacts:
+  files:
+    - _book/
 #     - location
 #     - target/messageUtil-1.0.jar
 #   discard-paths: yes
