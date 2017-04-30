@@ -22,9 +22,9 @@ phases:
       - echo Build completed on `date`
       - ls -la
 artifacts:
-  type: zip
+#  type: zip
   files:
-    - _book/
+    - _book/index.html
 #     - location
 #     - target/messageUtil-1.0.jar
 #   discard-paths: yes
