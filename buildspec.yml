@@ -1,7 +1,9 @@
 version: 0.1
 
-#environment_variables:
-#  plaintext:
+environment_variables:
+  plaintext:
+    START_MESSAGE: '{"username":"CodeBuild","text":"Build Start"}'
+    SUCCESS_MESSAGE: '{"username":"CodeBuild","text":"Build End"}'
 #    SLACK_HEADER: 'content-type: application/json'
 #    PAYLOAD: 'payload={"username":"CodeBuild","text":"Build Start"}'
 #    PAYLOAD_END: '{"username": "CodeBuild", "text": "'${FIN}'"}'
