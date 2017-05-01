@@ -4,7 +4,7 @@ environment_variables:
   plaintext:
     SLACK_HEADER: 'content-type: application/json'
     PAYLOAD: '{"username": "CodeBuild", "text": "Build Start"}'
-    PAYLOAD_END: '{"username": "CodeBuild", "text": "'${FIN}'"}'
+#    PAYLOAD_END: '{"username": "CodeBuild", "text": "'${FIN}'"}'
 #     key: "value"
 #     JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64"
             
@@ -26,7 +26,7 @@ phases:
       - echo Build completed on `date`
       - FIN=Build completed on `date`
       - ls -la
-      - curl -X POST --data-urlencode payload="'"PAYLOAD_END"'" $SLACK_URL
+#      - curl -X POST --data-urlencode payload="'"PAYLOAD_END"'" $SLACK_URL
 artifacts:
 #  type: zip
   files:
