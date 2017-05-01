@@ -9,6 +9,7 @@ version: 0.1
 phases:
   install:
     commands:
+      - curl -X POST $SLACK_URL -H 'content-type: application/json' -d '{"username": "CodeBuild", "text": "Build Start"}'
       - npm install -g gitbook-cli
   pre_build:
     commands:
@@ -21,6 +22,7 @@ phases:
     commands:
       - echo Build completed on `date`
       - ls -la
+      - curl -X POST $SLACK_URL -H 'content-type: application/json' -d '{"username": "CodeBuild", "text": "Build Success"}'
 artifacts:
 #  type: zip
   files:
