@@ -1,9 +1,9 @@
 version: 0.1
 
-environment_variables:
-  plaintext:
-    SLACK_HEADER: 'content-type: application/json'
-    PAYLOAD: '{"username": "CodeBuild", "text": "Build Start"}'
+#environment_variables:
+#  plaintext:
+#    SLACK_HEADER: 'content-type: application/json'
+#    PAYLOAD: 'payload={"username":"CodeBuild","text":"Build Start"}'
 #    PAYLOAD_END: '{"username": "CodeBuild", "text": "'${FIN}'"}'
 #     key: "value"
 #     JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64"
@@ -11,8 +11,7 @@ environment_variables:
 phases:
   install:
     commands:
-      - echo "curl -X POST --data-urlencode payload='$PAYLOAD' $SLACK_URL"
-      - curl -X POST --data-urlencode payload="'"$PAYLOAD"'" $SLACK_URL
+      - curl -X POST --data-urlencode $START_MESSAGE $SLACK_URL
 #      - npm install -g gitbook-cli
   pre_build:
     commands:
@@ -26,7 +25,7 @@ phases:
       - echo Build completed on `date`
       - FIN=Build completed on `date`
       - ls -la
-#      - curl -X POST --data-urlencode payload="'"PAYLOAD_END"'" $SLACK_URL
+      - curl -X POST --data-urlencode $SUCCESS_MESSAGE $SLACK_URL
 artifacts:
 #  type: zip
   files:
