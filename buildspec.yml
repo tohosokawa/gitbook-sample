@@ -12,7 +12,8 @@ environment_variables:
 phases:
   install:
     commands:
-      - curl -X POST --data-urlencode $PAYLOAD $SLACK_URL -H $SLACK_HEADER
+      - echo "curl -X POST --data-urlencode $PAYLOAD $SLACK_URL"
+      - curl -X POST --data-urlencode $PAYLOAD $SLACK_URL
       - npm install -g gitbook-cli
   pre_build:
     commands:
