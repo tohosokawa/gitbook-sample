@@ -11,7 +11,7 @@ version: 0.1
 phases:
   install:
     commands:
-      - curl -X POST --data-urlencode $START_MESSAGE $SLACK_URL
+      - curl -X POST -d $START_MESSAGE $SLACK_URL
 #      - npm install -g gitbook-cli
   pre_build:
     commands:
@@ -25,7 +25,7 @@ phases:
       - echo Build completed on `date`
       - FIN=Build completed on `date`
       - ls -la
-      - curl -X POST --data-urlencode $SUCCESS_MESSAGE $SLACK_URL
+      - curl -X POST -d $SUCCESS_MESSAGE $SLACK_URL
 artifacts:
 #  type: zip
   files:
