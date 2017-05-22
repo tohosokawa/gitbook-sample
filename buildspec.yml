@@ -1,0 +1,22 @@
+version: 0.2
+
+
+phases:
+  pre_build:
+    commands:
+      - gitbook install
+  build:
+    commands:
+      - gitbook build
+      - xvfb-run gitbook pdf
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - ls -la
+      - mv *.pdf _book/*.pdf
+      - ls -la
+artifacts:
+  # type: zip
+  files:
+    - _book/*
+
