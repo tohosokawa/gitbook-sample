@@ -6,22 +6,24 @@ phases:
     commands:
       - sudo apt-get update
       - sudo apt-get install -y calibre
-#      - npm install -g gitbook-cli
+      - npm install -g gitbook-cli
   pre_build:
     commands:
-#      - gitbook install
+      - gitbook install
   build:
     commands:
-      # - gitbook build
+      - gitbook build
+      - gitbook pdf
   post_build:
     commands:
       - echo Build completed on `date`
-      - FIN=Build completed on `date`
       - ls -la
-# artifacts:
-#  type: zip
-  # files:
-    # - _book/*
+      - mv *.pdf _book/*.pdf
+      - ls -la
+artifacts:
+  # type: zip
+  files:
+    - _book/*
 #     - location
 #     - target/messageUtil-1.0.jar
 #   discard-paths: yes
