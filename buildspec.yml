@@ -1,37 +1,27 @@
-version: 0.1
+version: 0.2
 
-environment_variables:
-  plaintext:
-    START_MESSAGE: '{"username":"CodeBuild","text":"Build Start"}'
-    SUCCESS_MESSAGE: '{"username":"CodeBuild","text":"Build End"}'
-#    SLACK_HEADER: 'content-type: application/json'
-#    PAYLOAD: 'payload={"username":"CodeBuild","text":"Build Start"}'
-#    PAYLOAD_END: '{"username": "CodeBuild", "text": "'${FIN}'"}'
-#     key: "value"
-#     JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64"
-            
+
 phases:
   install:
     commands:
-      - curl -X POST -d $START_MESSAGE $SLACK_URL
+      - sudo apt-get update
+      - sudo apt-get install -y calibre
 #      - npm install -g gitbook-cli
   pre_build:
     commands:
-      - echo Nothing to do in the pre_build phase...
 #      - gitbook install
   build:
     commands:
-      - gitbook build
+      # - gitbook build
   post_build:
     commands:
       - echo Build completed on `date`
       - FIN=Build completed on `date`
       - ls -la
-      - curl -X POST -d $SUCCESS_MESSAGE $SLACK_URL
-artifacts:
+# artifacts:
 #  type: zip
-  files:
-    - _book/*
+  # files:
+    # - _book/*
 #     - location
 #     - target/messageUtil-1.0.jar
 #   discard-paths: yes
