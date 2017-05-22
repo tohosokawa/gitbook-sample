@@ -5,6 +5,8 @@ phases:
   install:
     commands:
       - sudo apt-get update
+      - sudo pip uninstall python-dateutil
+      - sudo pip install python-dateutil==2.2
       - sudo apt-get install -y calibre
       - npm install -g gitbook-cli
   pre_build:
