@@ -16,7 +16,7 @@ phases:
   build:
     commands:
       - gitbook build
-      - gitbook pdf
+      - xvfb-run gitbook pdf
   post_build:
     commands:
       - echo Build completed on `date`
