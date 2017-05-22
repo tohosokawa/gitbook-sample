@@ -8,6 +8,7 @@ phases:
       - sudo pip uninstall -y python-dateutil
       - sudo pip install python-dateutil==2.2
       - sudo apt-get install -y calibre
+      - sudo apt-get install -y xvfb
       - npm install -g gitbook-cli
   pre_build:
     commands:
