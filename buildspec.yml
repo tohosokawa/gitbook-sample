@@ -19,8 +19,4 @@ artifacts:
   # type: zip
   files:
     - _book/*
-#     - location
-#     - target/messageUtil-1.0.jar
-#   discard-paths: yes
-#   base-directory: _book
-  
+
